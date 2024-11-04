@@ -1,10 +1,13 @@
-const {Sequelize, DataTypes} = require('sequelize');
 const connection = require('../config/connection_db');
 
-const User = connection.define('User', {
-    username: {type: DataTypes.STRING, allowNull: false},
-    password: {type: DataTypes.STRING, allowNull: false},
-    role: {type: DataTypes.STRING, allowNull: false}
-});
-
-module.exports = User;
+function createUser(username, password, role){
+    const query = 'INSERT INTO Users (username, password, role) VALUES (?, ?, ?)';
+    connection.query(query, [username, password, role], (err, result) => {
+        if (err) {
+            console.error('Error: ', err);
+            return;
+        }
+        console.log("User created successfully: ", result.insertId);
+    });
+}
+module.exports = createUser;
