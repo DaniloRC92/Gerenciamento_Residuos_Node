@@ -1,6 +1,8 @@
+// Chamada do modulo jsonwebtoken
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = 'code1234*';
 
+// Função para validação de token 
 function verifyToken(req, res, next){
     const token = req.headers['authorization'];
 
