@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS gerenciamento;
+USE gerenciamento;
+CREATE TABLE IF NOT EXISTS Users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS Materials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  type VARCHAR(100) NOT NULL,
+  subtype VARCHAR(100),
+  value DECIMAL(10,2) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS Collections (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date DATE NOT NULL,
+  route VARCHAR(255),
+  materials TEXT,
+  weight DECIMAL(10,2),
+  vehicle VARCHAR(100),
+  documents TEXT,
+  createdBy INT
+);
