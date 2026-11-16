@@ -1,6 +1,6 @@
 // Chamada do modulo jsonwebtoken
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = 'code1234*';
+const SECRET_KEY = process.env.SECRET_KEY;
 
 // Função para validação de token 
 function verifyToken(req, res, next){
