@@ -2,8 +2,9 @@
   "name": "gerenciamento_residuos_node",
   "version": "1.0.0",
   "description": "Gerenciamento de compra e venda de residuos com NODE",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node --env-file=.env server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Danilo Ramos Costa",
